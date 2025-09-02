@@ -18,6 +18,10 @@ export default {
 			}
 		},
 		extend: {
+			fontFamily: {
+				'playfair': ['Playfair Display', 'serif'],
+				'inter': ['Inter', 'sans-serif'],
+			},
 			colors: {
 				border: 'hsl(var(--border))',
 				input: 'hsl(var(--input))',
@@ -52,6 +56,17 @@ export default {
 					DEFAULT: 'hsl(var(--card))',
 					foreground: 'hsl(var(--card-foreground))'
 				},
+				// Custom law firm colors
+				navy: {
+					deep: 'hsl(var(--navy-deep))',
+					light: 'hsl(var(--navy-light))'
+				},
+				gold: {
+					primary: 'hsl(var(--gold-primary))',
+					light: 'hsl(var(--gold-light))'
+				},
+				cream: 'hsl(var(--cream))',
+				elegant: 'hsl(var(--gray-elegant))',
 				sidebar: {
 					DEFAULT: 'hsl(var(--sidebar-background))',
 					foreground: 'hsl(var(--sidebar-foreground))',

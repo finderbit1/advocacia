@@ -2,41 +2,70 @@
 @tailwind components;
 @tailwind utilities;
 
-/* Definition of the design system. All colors, gradients, fonts, etc should be defined here. 
+/* Design system for elegant law firm - Advocacia Elegante 
 All colors MUST be HSL.
 */
 
 @layer base {
   :root {
+    /* Background system */
     --background: 0 0% 100%;
-    --foreground: 222.2 84% 4.9%;
+    --foreground: 220 26% 14%;
 
+    /* Card system */
     --card: 0 0% 100%;
-    --card-foreground: 222.2 84% 4.9%;
+    --card-foreground: 220 26% 14%;
 
+    /* Popover system */
     --popover: 0 0% 100%;
-    --popover-foreground: 222.2 84% 4.9%;
+    --popover-foreground: 220 26% 14%;
 
-    --primary: 222.2 47.4% 11.2%;
-    --primary-foreground: 210 40% 98%;
+    /* Primary - Deep Navy Blue for trust and professionalism */
+    --primary: 220 26% 14%;
+    --primary-foreground: 0 0% 98%;
+    
+    /* Secondary - Elegant gold accent */
+    --secondary: 45 86% 62%;
+    --secondary-foreground: 220 26% 14%;
 
-    --secondary: 210 40% 96.1%;
-    --secondary-foreground: 222.2 47.4% 11.2%;
+    /* Muted grays for sophisticated contrast */
+    --muted: 220 14% 96%;
+    --muted-foreground: 220 9% 46%;
 
-    --muted: 210 40% 96.1%;
-    --muted-foreground: 215.4 16.3% 46.9%;
-
-    --accent: 210 40% 96.1%;
-    --accent-foreground: 222.2 47.4% 11.2%;
+    /* Accent - Warm gold for highlights */
+    --accent: 45 86% 62%;
+    --accent-foreground: 220 26% 14%;
 
     --destructive: 0 84.2% 60.2%;
-    --destructive-foreground: 210 40% 98%;
+    --destructive-foreground: 0 0% 98%;
 
-    --border: 214.3 31.8% 91.4%;
-    --input: 214.3 31.8% 91.4%;
-    --ring: 222.2 84% 4.9%;
+    --border: 220 13% 91%;
+    --input: 220 13% 91%;
+    --ring: 220 26% 14%;
 
-    --radius: 0.5rem;
+    --radius: 0.75rem;
+
+    /* Custom law firm tokens */
+    --navy-deep: 220 26% 14%;
+    --navy-light: 220 26% 18%;
+    --gold-primary: 45 86% 62%;
+    --gold-light: 45 86% 72%;
+    --cream: 45 20% 97%;
+    --gray-elegant: 220 9% 46%;
+    
+    /* Gradients */
+    --gradient-hero: linear-gradient(135deg, hsl(220 26% 14%), hsl(220 26% 18%));
+    --gradient-gold: linear-gradient(135deg, hsl(45 86% 62%), hsl(45 86% 72%));
+    --gradient-subtle: linear-gradient(180deg, hsl(0 0% 100%), hsl(45 20% 97%));
+    
+    /* Shadows */
+    --shadow-elegant: 0 10px 40px -10px hsl(220 26% 14% / 0.1);
+    --shadow-gold: 0 8px 32px -8px hsl(45 86% 62% / 0.2);
+    --shadow-deep: 0 20px 60px -10px hsl(220 26% 14% / 0.15);
+
+    /* Transitions */
+    --transition-smooth: all 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+    --transition-fast: all 0.2s ease-out;
 
     --sidebar-background: 0 0% 98%;
 
@@ -100,6 +129,40 @@ All colors MUST be HSL.
   }
 
   body {
-    @apply bg-background text-foreground;
+    @apply bg-background text-foreground font-inter;
+  }
+}
+
+@layer components {
+  .gradient-hero {
+    background: var(--gradient-hero);
+  }
+  
+  .gradient-gold {
+    background: var(--gradient-gold);
+  }
+  
+  .gradient-subtle {
+    background: var(--gradient-subtle);
+  }
+  
+  .shadow-elegant {
+    box-shadow: var(--shadow-elegant);
+  }
+  
+  .shadow-gold {
+    box-shadow: var(--shadow-gold);
+  }
+  
+  .shadow-deep {
+    box-shadow: var(--shadow-deep);
+  }
+  
+  .transition-smooth {
+    transition: var(--transition-smooth);
+  }
+  
+  .transition-fast {
+    transition: var(--transition-fast);
   }
 }
