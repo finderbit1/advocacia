@@ -1,39 +1,73 @@
-# Welcome to your Lovable project
+# 🏛️ Advocacia Elegante - Site Institucional
 
-## Project info
+Site institucional moderno e elegante para escritório de advocacia, desenvolvido com React, TypeScript e Tailwind CSS.
 
-**URL**: https://lovable.dev/projects/027346b4-1705-4a4f-918d-6bf0a4649108
+## ✨ Funcionalidades
 
-## How can I edit this code?
+- **Botão WhatsApp Inteligente**: Mensagens personalizáveis por área de atuação
+- **FAQ Interativo**: Perguntas frequentes com filtros por categoria
+- **Ícones Elegantes**: Design moderno com gradientes e animações
+- **Responsivo**: Otimizado para todos os dispositivos
+- **Performance**: Carregamento rápido e otimizado
 
-There are several ways of editing your application.
+## 🚀 Tecnologias Utilizadas
 
-**Use Lovable**
+- **React 18** - Framework JavaScript
+- **TypeScript** - Tipagem estática
+- **Vite** - Build tool moderno
+- **Tailwind CSS** - Framework CSS utilitário
+- **shadcn/ui** - Componentes UI elegantes
+- **Lucide React** - Ícones modernos
+- **pnpm** - Gerenciador de pacotes rápido
 
-Simply visit the [Lovable Project](https://lovable.dev/projects/027346b4-1705-4a4f-918d-6bf0a4649108) and start prompting.
+## 📦 Instalação e Uso
 
-Changes made via Lovable will be committed automatically to this repo.
+### Pré-requisitos
 
-**Use your preferred IDE**
+- Node.js 18+ 
+- pnpm (recomendado) ou npm
 
-If you want to work locally using your own IDE, you can clone this repo and push changes. Pushed changes will also be reflected in Lovable.
+### Instalação do pnpm
 
-The only requirement is having Node.js & npm installed - [install with nvm](https://github.com/nvm-sh/nvm#installing-and-updating)
+```bash
+npm install -g pnpm
+```
 
-Follow these steps:
+### Configuração do Projeto
 
-```sh
-# Step 1: Clone the repository using the project's Git URL.
+```bash
+# 1. Clone o repositório
 git clone <YOUR_GIT_URL>
 
-# Step 2: Navigate to the project directory.
-cd <YOUR_PROJECT_NAME>
+# 2. Navegue para o diretório
+cd advocacia
 
-# Step 3: Install the necessary dependencies.
-npm i
+# 3. Instale as dependências com pnpm
+pnpm install
 
-# Step 4: Start the development server with auto-reloading and an instant preview.
-npm run dev
+# 4. Inicie o servidor de desenvolvimento
+pnpm dev
+```
+
+### Scripts Disponíveis
+
+```bash
+# Desenvolvimento
+pnpm dev              # Inicia servidor de desenvolvimento
+
+# Build
+pnpm build            # Build de produção
+pnpm build:dev        # Build de desenvolvimento
+pnpm preview          # Preview do build
+
+# Qualidade de código
+pnpm lint             # Verifica problemas de linting
+pnpm lint:fix         # Corrige problemas de linting automaticamente
+pnpm type-check       # Verifica tipos TypeScript
+
+# Utilitários
+pnpm clean            # Limpa arquivos de build
+pnpm install:clean    # Reinstala dependências do zero
 ```
 
 **Edit a file directly in GitHub**

@@ -1,10 +1,11 @@
 import { Button } from "@/components/ui/button";
 import heroBackground from "@/assets/hero-background.jpg";
-import { ArrowRight, Scale } from "lucide-react";
+import { ArrowRight, Scale, Star, Award, Shield, Zap, Calendar } from "lucide-react";
+import AppointmentModal from "@/components/AppointmentModal";
 
 const Hero = () => {
   return (
-    <section className="relative min-h-screen flex items-center justify-center overflow-hidden">
+    <section id="hero" className="relative min-h-screen flex items-center justify-center overflow-hidden">
       {/* Background Image with Overlay */}
       <div 
         className="absolute inset-0 bg-cover bg-center bg-no-repeat"
@@ -20,7 +21,16 @@ const Hero = () => {
         <div className="max-w-4xl mx-auto">
           {/* Icon */}
           <div className="mb-8 animate-scale-up">
-            <Scale className="h-16 w-16 mx-auto text-secondary mb-4 animate-glow" />
+            <div className="relative">
+              <div className="w-20 h-20 mx-auto bg-gradient-to-br from-secondary/20 to-secondary/40 rounded-full flex items-center justify-center mb-4 animate-glow shadow-gold">
+                <Scale className="h-10 w-10 text-secondary animate-bounce" />
+              </div>
+              {/* Floating icons around main icon */}
+              <Star className="absolute -top-2 -right-2 h-6 w-6 text-secondary/60 animate-pulse" />
+              <Award className="absolute -bottom-2 -left-2 h-6 w-6 text-secondary/60 animate-pulse" style={{ animationDelay: '0.5s' }} />
+              <Shield className="absolute -top-2 -left-2 h-5 w-5 text-secondary/40 animate-pulse" style={{ animationDelay: '1s' }} />
+              <Zap className="absolute -bottom-2 -right-2 h-5 w-5 text-secondary/40 animate-pulse" style={{ animationDelay: '1.5s' }} />
+            </div>
           </div>
           
           {/* Main Heading */}
@@ -37,28 +47,45 @@ const Hero = () => {
           
           {/* CTA Buttons */}
           <div className="flex flex-col sm:flex-row gap-4 justify-center items-center animate-slide-up-delay-3">
-            <Button variant="secondary" size="lg" className="group shadow-gold hover:shadow-glow">
-              Agendar Consulta
-              <ArrowRight className="ml-2 h-5 w-5 group-hover:translate-x-1 transition-transform" />
-            </Button>
-            <Button variant="outline" size="lg" className="border-primary-foreground text-primary-foreground hover:bg-primary-foreground hover:text-primary shadow-elegant hover:shadow-premium transition-all">
+            <AppointmentModal>
+              <Button variant="secondary" size="lg" className="group shadow-gold hover:shadow-glow">
+                <Calendar className="mr-2 h-5 w-5" />
+                Agendar Consulta
+                <ArrowRight className="ml-2 h-5 w-5 group-hover:translate-x-1 transition-transform" />
+              </Button>
+            </AppointmentModal>
+            <Button 
+              variant="outline" 
+              size="lg" 
+              className="border-primary-foreground text-primary-foreground hover:bg-primary-foreground hover:text-primary shadow-elegant hover:shadow-premium transition-all"
+              onClick={() => {
+                const servicesSection = document.getElementById('services');
+                if (servicesSection) {
+                  servicesSection.scrollIntoView({ behavior: 'smooth' });
+                }
+              }}
+            >
               Conheça Nossos Serviços
             </Button>
           </div>
           
           {/* Trust Indicators */}
-          <div className="mt-16 grid grid-cols-1 md:grid-cols-3 gap-8 text-primary-foreground/80 animate-fade-in-up" style={{ animationDelay: '1s' }}>
+          <div className="mt-16 grid grid-cols-2 md:grid-cols-4 gap-6 text-primary-foreground/80 animate-fade-in-up" style={{ animationDelay: '1s' }}>
             <div className="text-center group cursor-pointer">
               <div className="text-3xl font-bold text-secondary mb-2 group-hover:scale-110 transition-transform counter-animation" data-target="25">25+</div>
               <div className="text-sm uppercase tracking-wider">Anos de Experiência</div>
             </div>
             <div className="text-center group cursor-pointer">
-              <div className="text-3xl font-bold text-secondary mb-2 group-hover:scale-110 transition-transform counter-animation" data-target="1000">1000+</div>
+              <div className="text-3xl font-bold text-secondary mb-2 group-hover:scale-110 transition-transform counter-animation" data-target="1500">1500+</div>
               <div className="text-sm uppercase tracking-wider">Casos Resolvidos</div>
             </div>
             <div className="text-center group cursor-pointer">
               <div className="text-3xl font-bold text-secondary mb-2 group-hover:scale-110 transition-transform counter-animation" data-target="98">98%</div>
               <div className="text-sm uppercase tracking-wider">Taxa de Sucesso</div>
+            </div>
+            <div className="text-center group cursor-pointer">
+              <div className="text-3xl font-bold text-secondary mb-2 group-hover:scale-110 transition-transform counter-animation" data-target="500">500+</div>
+              <div className="text-sm uppercase tracking-wider">Clientes Atendidos</div>
             </div>
           </div>
         </div>

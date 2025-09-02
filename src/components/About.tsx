@@ -1,9 +1,9 @@
 import { Button } from "@/components/ui/button";
-import { Award, Users, Clock, MapPin } from "lucide-react";
+import { Award, Users, Clock, MapPin, Star, Shield, Zap, Target, Trophy, BookOpen } from "lucide-react";
 
 const About = () => {
   return (
-    <section className="py-20 bg-background">
+    <section id="about" className="py-20 bg-background">
       <div className="container mx-auto px-4">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
           {/* Content */}
@@ -19,35 +19,44 @@ const About = () => {
             </p>
             
             <p className="text-lg text-elegant mb-8 leading-relaxed">
-              Nossa equipe de advogados especializados trabalha com dedicação integral para garantir 
+              Nossa equipe de 15 advogados especializados trabalha com dedicação integral para garantir 
               os melhores resultados, sempre pautados pela ética, transparência e compromisso com a justiça.
+              Já atendemos mais de 500 empresas e recuperamos mais de R$ 15 milhões em valores para nossos clientes.
             </p>
 
             {/* Stats */}
             <div className="grid grid-cols-2 gap-6 mb-8">
-              <div className="flex items-center group">
-                <Award className="h-6 w-6 text-secondary mr-3 group-hover:animate-bounce" />
+              <div className="flex items-center group p-4 rounded-xl hover:bg-secondary/5 transition-all duration-300">
+                <div className="w-12 h-12 bg-gradient-to-br from-yellow-400 to-yellow-500 rounded-full flex items-center justify-center mr-4 group-hover:scale-110 transition-transform">
+                  <Award className="h-6 w-6 text-white" />
+                </div>
                 <div>
                   <div className="font-bold text-primary">Prêmios OAB</div>
                   <div className="text-sm text-elegant">Reconhecimento profissional</div>
                 </div>
               </div>
-              <div className="flex items-center group">
-                <Users className="h-6 w-6 text-secondary mr-3 group-hover:animate-bounce" />
+              <div className="flex items-center group p-4 rounded-xl hover:bg-secondary/5 transition-all duration-300">
+                <div className="w-12 h-12 bg-gradient-to-br from-blue-500 to-blue-600 rounded-full flex items-center justify-center mr-4 group-hover:scale-110 transition-transform">
+                  <Users className="h-6 w-6 text-white" />
+                </div>
                 <div>
                   <div className="font-bold text-primary">Equipe Especializada</div>
                   <div className="text-sm text-elegant">15 advogados experientes</div>
                 </div>
               </div>
-              <div className="flex items-center group">
-                <Clock className="h-6 w-6 text-secondary mr-3 group-hover:animate-bounce" />
+              <div className="flex items-center group p-4 rounded-xl hover:bg-secondary/5 transition-all duration-300">
+                <div className="w-12 h-12 bg-gradient-to-br from-green-500 to-green-600 rounded-full flex items-center justify-center mr-4 group-hover:scale-110 transition-transform">
+                  <Clock className="h-6 w-6 text-white" />
+                </div>
                 <div>
                   <div className="font-bold text-primary">Atendimento 24h</div>
                   <div className="text-sm text-elegant">Suporte emergencial</div>
                 </div>
               </div>
-              <div className="flex items-center group">
-                <MapPin className="h-6 w-6 text-secondary mr-3 group-hover:animate-bounce" />
+              <div className="flex items-center group p-4 rounded-xl hover:bg-secondary/5 transition-all duration-300">
+                <div className="w-12 h-12 bg-gradient-to-br from-purple-500 to-purple-600 rounded-full flex items-center justify-center mr-4 group-hover:scale-110 transition-transform">
+                  <MapPin className="h-6 w-6 text-white" />
+                </div>
                 <div>
                   <div className="font-bold text-primary">Múltiplas Cidades</div>
                   <div className="text-sm text-elegant">Presença nacional</div>
