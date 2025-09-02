@@ -1,10 +1,9 @@
 import { createRoot } from 'react-dom/client'
 import { StrictMode, lazy, Suspense } from 'react'
-import App from './App.tsx'
 import './index.css'
 
-// Lazy loading para componentes pesados
-const LazyApp = lazy(() => import('./App.tsx'))
+// Lazy loading do App para reduzir o bundle inicial
+const LazyApp = lazy(() => import('./App'))
 
 createRoot(document.getElementById("root")!).render(
   <StrictMode>
@@ -17,7 +16,7 @@ createRoot(document.getElementById("root")!).render(
         </div>
       </div>
     }>
-      <App />
+      <LazyApp />
     </Suspense>
   </StrictMode>
 );
