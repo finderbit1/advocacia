@@ -40,17 +40,21 @@ const Testimonials = () => {
         {/* Testimonials Grid */}
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
           {testimonials.map((testimonial, index) => (
-            <Card key={index} className="shadow-elegant hover:shadow-deep transition-all duration-300 border-0 gradient-subtle">
+            <Card 
+              key={index} 
+              className="shadow-elegant hover:shadow-premium transition-all duration-500 border-0 gradient-subtle group animate-on-scroll hover:-translate-y-2"
+              style={{ animationDelay: `${index * 0.2}s` }}
+            >
               <CardContent className="p-8">
                 {/* Rating */}
                 <div className="flex mb-6">
                   {[...Array(testimonial.rating)].map((_, i) => (
-                    <Star key={i} className="h-5 w-5 text-secondary fill-current" />
+                    <Star key={i} className="h-5 w-5 text-secondary fill-current group-hover:animate-pulse" style={{ animationDelay: `${i * 0.1}s` }} />
                   ))}
                 </div>
                 
                 {/* Content */}
-                <blockquote className="text-elegant mb-6 italic leading-relaxed">
+                <blockquote className="text-elegant mb-6 italic leading-relaxed group-hover:text-primary transition-colors">
                   "{testimonial.content}"
                 </blockquote>
                 

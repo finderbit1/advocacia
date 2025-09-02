@@ -45,27 +45,41 @@ All colors MUST be HSL.
 
     --radius: 0.75rem;
 
-    /* Custom law firm tokens */
+    /* Custom law firm tokens - Premium Edition */
     --navy-deep: 220 26% 14%;
     --navy-light: 220 26% 18%;
+    --navy-premium: 220 30% 10%;
     --gold-primary: 45 86% 62%;
     --gold-light: 45 86% 72%;
+    --gold-premium: 45 100% 55%;
     --cream: 45 20% 97%;
+    --cream-warm: 45 25% 95%;
     --gray-elegant: 220 9% 46%;
+    --platinum: 0 0% 85%;
     
-    /* Gradients */
-    --gradient-hero: linear-gradient(135deg, hsl(220 26% 14%), hsl(220 26% 18%));
-    --gradient-gold: linear-gradient(135deg, hsl(45 86% 62%), hsl(45 86% 72%));
-    --gradient-subtle: linear-gradient(180deg, hsl(0 0% 100%), hsl(45 20% 97%));
+    /* Premium Gradients */
+    --gradient-hero: linear-gradient(135deg, hsl(220 26% 14%) 0%, hsl(220 26% 18%) 50%, hsl(220 30% 10%) 100%);
+    --gradient-gold: linear-gradient(135deg, hsl(45 86% 62%) 0%, hsl(45 86% 72%) 50%, hsl(45 100% 55%) 100%);
+    --gradient-subtle: linear-gradient(180deg, hsl(0 0% 100%) 0%, hsl(45 20% 97%) 100%);
+    --gradient-premium: linear-gradient(135deg, hsl(220 30% 10%) 0%, hsl(45 100% 55%) 100%);
+    --gradient-radial: radial-gradient(circle at center, hsl(45 86% 62% / 0.1) 0%, transparent 70%);
+    --gradient-mesh: 
+      linear-gradient(135deg, hsl(220 26% 14% / 0.8) 0%, transparent 50%),
+      radial-gradient(circle at 20% 80%, hsl(45 86% 62% / 0.1) 0%, transparent 50%),
+      radial-gradient(circle at 80% 20%, hsl(45 100% 55% / 0.1) 0%, transparent 50%);
     
-    /* Shadows */
-    --shadow-elegant: 0 10px 40px -10px hsl(220 26% 14% / 0.1);
-    --shadow-gold: 0 8px 32px -8px hsl(45 86% 62% / 0.2);
-    --shadow-deep: 0 20px 60px -10px hsl(220 26% 14% / 0.15);
+    /* Premium Shadows */
+    --shadow-elegant: 0 10px 40px -10px hsl(220 26% 14% / 0.12);
+    --shadow-gold: 0 8px 32px -8px hsl(45 86% 62% / 0.25);
+    --shadow-deep: 0 20px 60px -10px hsl(220 26% 14% / 0.2);
+    --shadow-premium: 0 25px 80px -15px hsl(220 30% 10% / 0.3);
+    --shadow-glow: 0 0 40px hsl(45 100% 55% / 0.4);
+    --shadow-inset: inset 0 1px 0 hsl(0 0% 100% / 0.1);
 
-    /* Transitions */
-    --transition-smooth: all 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
-    --transition-fast: all 0.2s ease-out;
+    /* Premium Transitions */
+    --transition-smooth: all 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+    --transition-fast: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    --transition-bounce: all 0.8s cubic-bezier(0.68, -0.55, 0.265, 1.55);
 
     --sidebar-background: 0 0% 98%;
 
@@ -136,6 +150,15 @@ All colors MUST be HSL.
 @layer components {
   .gradient-hero {
     background: var(--gradient-hero);
+    position: relative;
+  }
+  
+  .gradient-hero::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: var(--gradient-mesh);
+    pointer-events: none;
   }
   
   .gradient-gold {
@@ -144,6 +167,14 @@ All colors MUST be HSL.
   
   .gradient-subtle {
     background: var(--gradient-subtle);
+  }
+  
+  .gradient-premium {
+    background: var(--gradient-premium);
+  }
+  
+  .gradient-radial {
+    background: var(--gradient-radial);
   }
   
   .shadow-elegant {
@@ -158,11 +189,122 @@ All colors MUST be HSL.
     box-shadow: var(--shadow-deep);
   }
   
+  .shadow-premium {
+    box-shadow: var(--shadow-premium);
+  }
+  
+  .shadow-glow {
+    box-shadow: var(--shadow-glow);
+  }
+  
+  .shadow-inset {
+    box-shadow: var(--shadow-inset);
+  }
+  
   .transition-smooth {
     transition: var(--transition-smooth);
   }
   
   .transition-fast {
     transition: var(--transition-fast);
+  }
+  
+  .transition-bounce {
+    transition: var(--transition-bounce);
+  }
+
+  /* Premium Animation Classes */
+  .animate-float {
+    animation: float 6s ease-in-out infinite;
+  }
+  
+  .animate-glow {
+    animation: glow 2s ease-in-out infinite alternate;
+  }
+  
+  .animate-slide-up {
+    animation: slideUp 0.8s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+  }
+  
+  .animate-slide-up-delay-1 {
+    animation: slideUp 0.8s cubic-bezier(0.16, 1, 0.3, 1) 0.1s forwards;
+  }
+  
+  .animate-slide-up-delay-2 {
+    animation: slideUp 0.8s cubic-bezier(0.16, 1, 0.3, 1) 0.2s forwards;
+  }
+  
+  .animate-slide-up-delay-3 {
+    animation: slideUp 0.8s cubic-bezier(0.16, 1, 0.3, 1) 0.3s forwards;
+  }
+
+  .animate-scale-up {
+    animation: scaleUp 0.6s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+  }
+
+  .animate-fade-in-up {
+    animation: fadeInUp 1s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+  }
+
+  .animate-on-scroll {
+    opacity: 0;
+    transform: translateY(30px);
+    transition: all 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+  }
+
+  .animate-on-scroll.in-view {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes float {
+  0%, 100% { 
+    transform: translateY(0px) rotate(0deg); 
+  }
+  50% { 
+    transform: translateY(-20px) rotate(1deg); 
+  }
+}
+
+@keyframes glow {
+  from {
+    filter: drop-shadow(0 0 20px hsl(45 86% 62% / 0.4));
+  }
+  to {
+    filter: drop-shadow(0 0 40px hsl(45 86% 62% / 0.8));
+  }
+}
+
+@keyframes slideUp {
+  from {
+    opacity: 0;
+    transform: translateY(60px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes scaleUp {
+  from {
+    opacity: 0;
+    transform: scale(0.8);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(40px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
   }
 }

@@ -53,12 +53,16 @@ const Services = () => {
           {services.map((service, index) => {
             const IconComponent = service.icon;
             return (
-              <Card key={index} className="shadow-elegant hover:shadow-deep transition-all duration-300 hover:-translate-y-1 border-0">
+              <Card 
+                key={index} 
+                className="shadow-elegant hover:shadow-premium transition-all duration-500 hover:-translate-y-2 border-0 group animate-on-scroll"
+                style={{ animationDelay: `${index * 0.1}s` }}
+              >
                 <CardHeader className="text-center pb-4">
-                  <div className="w-16 h-16 mx-auto mb-4 gradient-gold rounded-full flex items-center justify-center">
-                    <IconComponent className="h-8 w-8 text-primary" />
+                  <div className="w-16 h-16 mx-auto mb-4 gradient-gold rounded-full flex items-center justify-center group-hover:shadow-glow transition-all duration-300 group-hover:scale-110">
+                    <IconComponent className="h-8 w-8 text-primary group-hover:animate-bounce" />
                   </div>
-                  <CardTitle className="font-playfair text-xl text-primary">
+                  <CardTitle className="font-playfair text-xl text-primary group-hover:text-secondary transition-colors">
                     {service.title}
                   </CardTitle>
                 </CardHeader>

@@ -57,7 +57,7 @@ const Contact = () => {
                   />
                 </div>
                 
-                <Button variant="secondary" size="lg" className="w-full">
+                <Button variant="secondary" size="lg" className="w-full shadow-gold hover:shadow-glow transition-all hover:scale-105">
                   Enviar Mensagem
                 </Button>
               </CardContent>
@@ -113,18 +113,18 @@ const Contact = () => {
             </div>
 
             {/* Quick Stats */}
-            <Card className="shadow-elegant border-0 gradient-hero text-primary-foreground">
+            <Card className="shadow-elegant border-0 gradient-hero text-primary-foreground animate-float">
               <CardContent className="p-6 text-center">
-                <h4 className="font-playfair text-xl font-bold mb-4">
+                <h4 className="font-playfair text-xl font-bold mb-4 animate-glow">
                   Atendimento Personalizado
                 </h4>
                 <div className="grid grid-cols-2 gap-4 text-center">
-                  <div>
-                    <div className="text-2xl font-bold text-secondary">24h</div>
+                  <div className="group cursor-pointer">
+                    <div className="text-2xl font-bold text-secondary group-hover:scale-110 transition-transform">24h</div>
                     <div className="text-sm">Resposta</div>
                   </div>
-                  <div>
-                    <div className="text-2xl font-bold text-secondary">100%</div>
+                  <div className="group cursor-pointer">
+                    <div className="text-2xl font-bold text-secondary group-hover:scale-110 transition-transform">100%</div>
                     <div className="text-sm">Confidencial</div>
                   </div>
                 </div>
